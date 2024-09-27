@@ -56,17 +56,36 @@ from
 select
 	EMP_NAME,
 	HIRE_DATE,
-    DATE_ADD(HIRE_DATE ,INTERVAL 6 MONTH) as '6개월 이후'
+    DATE_ADD(HIRE_DATE, INTERVAL 6 MONTH) as '6개월 이후'
 from
 	employee;
 
 -- EMPLOYEE 테이블에서 근무 년수가 20년 이상인 직원 조회
-
+select
+	EMP_NAME,
+    HIRE_DATE
+from
+	employee
+where
+	HIRE_DATE <= DATE_SUB(CURDATE(), INTERVAL 20 YEAR);		-- 더 알아보기
 
 -- EMPLOYEE 테이블에서 사원명, 입사일, 
 -- 입사한 월의 근무일수를 조회하세요
+select
+	EMP_NAME,
+    HIRE_DATE
+from
+	employee;		-- 다시
+
 
 -- EMPLOYEE 테이블에서 직원의 이름, 입사일, 근무년수를 조회
 -- 단, 근무년수는 현재년도 - 입사년도로 조회
+select
+	EMP_NAME,
+    HIRE_DATE
+    HERE_DATE DATE_SUB()
+from
+	employee;  			-- 다시
+
 
 -- EMPLOYEE 테이블에서 사번이 홀수인 직원들의 정보 모두 조회 (mod)
